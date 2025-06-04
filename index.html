@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMarketing Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="téléchargement (28).jpeg" alt="Logo TechMarketing Solutions" style="height:48px;vertical-align:middle;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-right:10px;">
+                TechMarketing Solutions
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" data-en="Home" data-fr="Accueil">Accueil</a></li>
+                <li><a href="#products" data-en="Products" data-fr="Produits">Produits</a></li>
+                <li><a href="#analytics" data-en="Analytics" data-fr="Analyses">Analyses</a></li>
+                <li><a href="#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
+                <li><a href="#" onclick="toggleCart()" data-en="Cart" data-fr="Panier">Panier (<span id="cart-count">0</span>)</a></li>
+            </ul>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="switchLanguage('fr')">FR</button>
+                <button class="lang-btn" onclick="switchLanguage('en')">EN</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-en="Tech & Marketing Excellence" data-fr="Excellence Tech & Marketing">Excellence Tech & Marketing</h1>
+                <p data-en="Discover our premium collection of technology and fashion products" data-fr="Découvrez notre collection premium de produits technologiques et de mode">Découvrez notre collection premium de produits technologiques et de mode</p>
+                <a href="#products" class="cta-btn" data-en="Shop Now" data-fr="Acheter Maintenant">Acheter Maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title" data-en="Our Products" data-fr="Nos Produits">Nos Produits</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="téléchargement (29).jpeg" alt="Tenues ensemble couple Africain" loading="lazy" />
+                        <div class="product-badge" data-en="New" data-fr="Nouveau">Nouveau</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title" data-en="African Couple Outfits" data-fr="Tenues ensemble couple Africain">Tenues ensemble couple Africain</h3>
+                        <p class="product-price">97 500 FCFA</p>
+                        <button class="add-to-cart" onclick="addToCart('Tenues ensemble couple Africain', 97500)" data-en="Add to Cart" data-fr="Ajouter au Panier">Ajouter au Panier</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="téléchargement (30).jpeg" alt="Montre Luxueuse Waterproof" loading="lazy" />
+                        <div class="product-badge" data-en="Popular" data-fr="Populaire">Populaire</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title" data-en="Luxury Waterproof Watch" data-fr="Montre Luxueuse Waterproof">Montre Luxueuse Waterproof</h3>
+                        <p class="product-price">195 000 FCFA</p>
+                        <button class="add-to-cart" onclick="addToCart('Montre Luxueuse Waterproof', 195000)" data-en="Add to Cart" data-fr="Ajouter au Panier">Ajouter au Panier</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="téléchargement (31).jpeg" alt="Montres de Luxe" loading="lazy" />
+                        <div class="product-badge" data-en="Premium" data-fr="Premium">Premium</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title" data-en="Luxury Watches" data-fr="Montres de Luxe">Montres de Luxe</h3>
+                        <p class="product-price">390 000 FCFA</p>
+                        <button class="add-to-cart" onclick="addToCart('Montres de Luxe', 390000)" data-en="Add to Cart" data-fr="Ajouter au Panier">Ajouter au Panier</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="téléchargement (32).jpeg" alt="Montre à personnalisé pour couple" loading="lazy" />
+                        <div class="product-badge" data-en="Trending" data-fr="Tendance">Tendance</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title" data-en="Custom Couple Watch" data-fr="Montre à personnalisé pour couple">Montre à personnalisé pour couple</h3>
+                        <p class="product-price">129 000 FCFA</p>
+                        <button class="add-to-cart" onclick="addToCart('Montre à personnalisé pour couple', 129000)" data-en="Add to Cart" data-fr="Ajouter au Panier">Ajouter au Panier</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 id="customers-count">10,000+</h3>
+                    <p data-en="Happy Customers" data-fr="Clients Satisfaits">Clients Satisfaits</p>
+                </div>
+                <div class="stat-item">
+                    <h3 id="products-count">500+</h3>
+                    <p data-en="Products" data-fr="Produits">Produits</p>
+                </div>
+                <div class="stat-item">
+                    <h3 id="countries-count">25+</h3>
+                    <p data-en="Countries" data-fr="Pays">Pays</p>
+                </div>
+                <div class="stat-item">
+                    <h3 id="satisfaction-rate">98%</h3>
+                    <p data-en="Satisfaction Rate" data-fr="Taux de Satisfaction">Taux de Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="analytics" id="analytics">
+        <div class="container">
+            <h2 class="section-title" data-en="Business Analytics" data-fr="Analyses Business">Analyses Business</h2>
+            <div class="chart-container">
+                <div class="chart-box">
+                    <h3 data-en="Monthly Sales" data-fr="Ventes Mensuelles">Ventes Mensuelles</h3>
+                    <canvas id="salesChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <h3 data-en="Product Categories" data-fr="Catégories de Produits">Catégories de Produits</h3>
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th data-en="Product" data-fr="Produit">Produit</th>
+                        <th data-en="Sales" data-fr="Ventes">Ventes</th>
+                        <th data-en="Revenue" data-fr="Revenus">Revenus</th>
+                        <th data-en="Growth" data-fr="Croissance">Croissance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Montres Connectées</td>
+                        <td>1,250</td>
+                        <td>243 750 000 FCFA</td>
+                        <td style="color: #27ae60;">+15%</td>
+                    </tr>
+                    <tr>
+                        <td>Mode & Vêtements</td>
+                        <td>2,100</td>
+                        <td>205 500 000 FCFA</td>
+                        <td style="color: #27ae60;">+22%</td>
+                    </tr>
+                    <tr>
+                        <td>Montres de Luxe</td>
+                        <td>450</td>
+                        <td>175 725 000 FCFA</td>
+                        <td style="color: #27ae60;">+8%</td>
+                    </tr>
+                    <tr>
+                        <td>Accessoires</td>
+                        <td>890</td>
+                        <td>115 700 000 FCFA</td>
+                        <td style="color: #e74c3c;">-3%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title" data-en="Contact Us" data-fr="Contactez-nous">Contactez-nous</h2>
+            <div class="form-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" data-en="Name" data-fr="Nom">Nom</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-en="Email" data-fr="Email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" data-en="Subject" data-fr="Sujet">Sujet</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-en="Message" data-fr="Message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" data-en="Send Message" data-fr="Envoyer le Message">Envoyer le Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="téléchargement (28).jpeg" alt="Logo TechMarketing Solutions">
+                <span>TechMarketing Solutions</span>
+            </div>
+            <p>&copy; 2024 TechMarketing Solutions. <span data-en="All rights reserved." data-fr="Tous droits réservés.">Tous droits réservés.</span></p>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener" title="Facebook"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"></a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" title="Instagram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener" title="LinkedIn"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"></a>
+                <a href="https://wa.me/" target="_blank" rel="noopener" title="WhatsApp"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"></a>
+                <a href="mailto:contact@techmarketing.com" title="Email"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Email"></a>
+            </div>
+            <div style="font-size: 0.95rem; color: #bbb; margin-top: 0.5rem;">
+                <span>Suivez-nous sur les réseaux sociaux&nbsp;!</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart -->
+    <div class="cart" id="cart">
+        <h3 data-en="Shopping Cart" data-fr="Panier d'Achat">Panier d'Achat</h3>
+        <div id="cart-items"></div>
+        <div class="cart-total" id="cart-total">Total: 0 FCFA</div>
+        <button class="submit-btn" style="margin-top: 15px;" data-en="Checkout" data-fr="Commander">Commander</button>
+    </div>
+
+    <!-- Chatbot Widget -->
+<div id="chatbot-widget" style="position:fixed;bottom:30px;right:30px;z-index:2000;">
+    <button id="chatbot-toggle" style="background:linear-gradient(45deg,#667eea,#764ba2);color:#fff;border:none;border-radius:50%;width:60px;height:60px;box-shadow:0 4px 20px rgba(0,0,0,0.15);font-size:2rem;cursor:pointer;">💬</button>
+    <div id="chatbot-window" style="display:none;flex-direction:column;width:320px;max-width:90vw;height:420px;box-shadow:0 8px 32px rgba(102,126,234,0.18);background:#fff;border-radius:18px;overflow:hidden;position:absolute;bottom:70px;right:0;">
+        <div style="background:linear-gradient(45deg,#667eea,#764ba2);color:#fff;padding:1rem;font-weight:bold;">Chat TechMarketing</div>
+        <div id="chatbot-messages" style="flex:1;padding:1rem;overflow-y:auto;font-size:1rem;background:#f8f9fa;"></div>
+        <form id="chatbot-form" style="display:flex;padding:0.5rem;background:#f0f0f0;gap:0.5rem;">
+            <input id="chatbot-input" type="text" placeholder="Votre question..." autocomplete="off" style="flex:1;padding:0.7rem 1rem;border-radius:20px;border:1px solid #ddd;font-size:1rem;">
+            <button type="submit" style="background:linear-gradient(45deg,#667eea,#764ba2);color:#fff;border:none;border-radius:20px;padding:0 18px;font-weight:bold;cursor:pointer;">Envoyer</button>
+        </form>
+    </div>
+</div>
+<script>
+        // Script JavaScript pour la gestion du panier, des produits, et des statistiques
+
+        // Données fictives pour les produits et les statistiques
+        const products = [
+            { id: 1, name: " Tenues Coordonnées", price: 195000, image: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%23667eea' width='300' height='200'/><text x='50%' y='50%' fill='white' text-anchor='middle' dy='.35em' font-size='16'>Montre Connectée</text></svg>", category: "Montres" },
+            { id: 2, name: "Montre Sport", price: 97500, image: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%23764ba2' width='300' height='200'/><text x='50%' y='50%' fill='white' text-anchor='middle' dy='.35em' font-size='16'>Tenues Coordonnées</text></svg>", category: "Vêtements" },
+            { id: 3, name: "Montres de Luxe", price: 390000, image: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%23ff6b6b' width='300' height='200'/><text x='50%' y='50%' fill='white' text-anchor='middle' dy='.35em' font-size='16'>Montres de Luxe</text></svg>", category: "Montres" },
+            { id: 4, name: "Montre à personnalisé pour couple", price: 129000, image: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%23ee5a24' width='300' height='200'/><text x='50%' y='50%' fill='white' text-anchor='middle' dy='.35em' font-size='16'>Mode Africaine</text></svg>", category: "Vêtements" }
+        ];
+
+        const cart = [];
+
+        // Fonction pour ajouter un produit au panier
+        function addToCart(productName, productPrice) {
+            const existingProduct = cart.find(item => item.name === productName);
+            if (existingProduct) {
+                existingProduct.quantity++;
+            } else {
+                cart.push({ name: productName, price: productPrice, quantity: 1 });
+            }
+            updateCart();
+        }
+
+        // Fonction pour mettre à jour l'affichage du panier
+        function updateCart() {
+            const cartItemsContainer = document.getElementById("cart-items");
+            const cartTotal = document.getElementById("cart-total");
+            cartItemsContainer.innerHTML = "";
+            let total = 0;
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                const cartItem = document.createElement("div");
+                cartItem.className = "cart-item";
+                cartItem.innerHTML = `
+                    <span class="cart-item-name">${item.name}</span>
+                    <span class="cart-item-price">${item.price} FCFA</span>
+                    <span class="cart-item-quantity">x${item.quantity}</span>
+                    <span class="cart-item-total">${itemTotal} FCFA</span>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+            cartTotal.innerText = `Total: ${total} FCFA`;
+            document.getElementById("cart-count").innerText = cart.length;
+        }
+
+        // Simulation des données statistiques
+        document.getElementById("customers-count").innerText = "10,000+";
+        document.getElementById("products-count").innerText = "500+";
+        document.getElementById("countries-count").innerText = "25+";
+        document.getElementById("satisfaction-rate").innerText = "98%";
+
+        // Données fictives pour les graphiques
+        const salesData = {
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            datasets: [{
+                label: "Ventes Mensuelles",
+                data: [12000, 15000, 18000, 13000, 22000, 25000, 30000, 27000, 32000, 35000, 40000, 45000],
+                backgroundColor: "rgba(38, 194, 129, 0.6)",
+                borderColor: "rgba(38, 194, 129, 1)",
+                borderWidth: 1
+            }]
+        };
+
+        const categoryData = {
+            labels: ["Montres", "Vêtements", "Accessoires"],
+            datasets: [{
+                label: "Catégories de Produits",
+                data: [55, 30, 15],
+                backgroundColor: ["#667eea", "#764ba2", "#ff6b6b"],
+                borderColor: "#fff",
+                borderWidth: 2
+            }]
+        };
+
+        // Création des graphiques
+        const ctx1 = document.getElementById("salesChart").getContext("2d");
+        const salesChart = new Chart(ctx1, {
+            type: "line",
+            data: salesData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: "#f2f2f2"
+                        }
+                    }
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById("categoryChart").getContext("2d");
+        const categoryChart = new Chart(ctx2, {
+            type: "doughnut",
+            data: categoryData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: "top",
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                const label = tooltipItem.label || "";
+                                const value = tooltipItem.raw || 0;
+                                return `${label}: ${value}%`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Traduction automatique FR/EN
+function switchLanguage(lang) {
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector('.lang-btn[onclick*="' + lang + '"]').classList.add('active');
+    document.querySelectorAll('[data-' + lang + ']').forEach(element => {
+        element.textContent = element.getAttribute('data-' + lang);
+    });
+    // Placeholder pour les inputs
+    if(lang === 'en') {
+        document.getElementById('name').placeholder = 'Your name...';
+        document.getElementById('email').placeholder = 'Your email...';
+        document.getElementById('subject').placeholder = 'Subject...';
+        document.getElementById('message').placeholder = 'Your message...';
+    } else {
+        document.getElementById('name').placeholder = 'Votre nom...';
+        document.getElementById('email').placeholder = 'Votre email...';
+        document.getElementById('subject').placeholder = 'Sujet...';
+        document.getElementById('message').placeholder = 'Votre message...';
+    }
+    // Placeholder newsletter
+    var newsletter = document.getElementById('newsletter-email');
+    if(newsletter) newsletter.placeholder = lang === 'en' ? 'Your email...' : 'Votre email...';
+}
+// Initialisation sur FR
+switchLanguage('fr');
+
+// Chatbot réponses automatiques
+const chatbotAnswers = [
+  { keywords: ["prix", "coût", "tarif", "combien", "price", "cost"], answer: "Nos prix sont affichés sur chaque fiche produit. Pour une demande spécifique, merci de préciser le produit !" },
+  { keywords: ["livraison", "expédition", "delivery", "ship"], answer: "Nous livrons partout en Afrique et en Europe sous 3 à 7 jours ouvrés." },
+  { keywords: ["paiement", "payer", "payment", "moyen"], answer: "Nous acceptons les paiements par carte bancaire, mobile money et virement bancaire." },
+  { keywords: ["retour", "remboursement", "return", "refund"], answer: "Vous disposez de 14 jours pour retourner un produit non utilisé. Contactez-nous pour la procédure !" },
+  { keywords: ["contact", "téléphone", "email", "joindre", "contact"], answer: "Vous pouvez nous contacter via le formulaire de contact ou par email à contact@techmarketing.com." },
+  { keywords: ["horaire", "ouverture", "heures", "hours", "open"], answer: "Notre service client est disponible du lundi au samedi de 8h à 20h." },
+  { keywords: ["produit", "catalogue", "product", "offre", "offres"], answer: "Découvrez tous nos produits dans la section 'Nos Produits'. Utilisez la recherche pour filtrer selon vos besoins !" },
+  { keywords: ["commande", "order", "acheter", "achat", "buy"], answer: "Pour commander, cliquez sur 'Ajouter au Panier' puis validez votre commande via le bouton Panier en haut à droite." },
+  { keywords: ["merci", "thanks", "thank you"], answer: "Merci pour votre message ! Nous sommes ravis de vous aider." },
+  { keywords: ["bonjour", "salut", "hello", "hi"], answer: "Bonjour ! Comment puis-je vous aider aujourd'hui ?" },
+];
+
+function getChatbotAnswer(question) {
+  const q = question.toLowerCase();
+  for (const item of chatbotAnswers) {
+    if (item.keywords.some(k => q.includes(k))) return item.answer;
+  }
+  return "Je n'ai pas compris votre demande. Un conseiller vous répondra rapidement ou reformulez votre question.";
+}
+
+const chatbotWidget = document.getElementById('chatbot-widget');
+const chatbotToggle = document.getElementById('chatbot-toggle');
+const chatbotWindow = document.getElementById('chatbot-window');
+const chatbotForm = document.getElementById('chatbot-form');
+const chatbotInput = document.getElementById('chatbot-input');
+const chatbotMessages = document.getElementById('chatbot-messages');
+
+chatbotToggle.onclick = () => {
+  chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+  if (chatbotWindow.style.display === 'flex') chatbotInput.focus();
+};
+
+chatbotForm.onsubmit = function(e) {
+  e.preventDefault();
+  const userMsg = chatbotInput.value.trim();
+  if (!userMsg) return;
+  chatbotMessages.innerHTML += `<div style='margin-bottom:8px;text-align:right;'><span style='background:#667eea;color:#fff;padding:7px 14px;border-radius:18px 18px 2px 18px;display:inline-block;'>${userMsg}</span></div>`;
+  chatbotInput.value = '';
+  setTimeout(() => {
+    const botMsg = getChatbotAnswer(userMsg);
+    chatbotMessages.innerHTML += `<div style='margin-bottom:8px;text-align:left;'><span style='background:#f0f0f0;color:#333;padding:7px 14px;border-radius:18px 2px 18px 18px;display:inline-block;'>${botMsg}</span></div>`;
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }, 600);
+};
+    </script>
+</body>
+</html>
